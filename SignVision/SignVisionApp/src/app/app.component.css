@@ -1,12 +1,3 @@
-.sidenav {
-    width: 20%; /* Breite des Menüs */
-  }
-  
-.mat-sidenav-container {
-    height: 100%; /* Höhe des Containers */
-    font-size: 1em;
-  }
-.mat-sidenav button{
-    border: none;
-    background-color: white;
+.spacer{
+  flex: 1;
 }

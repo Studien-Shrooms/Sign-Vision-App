@@ -1,22 +1,40 @@
-  <mat-sidenav-container>
-    <mat-sidenav *ngIf="showSideMenue" mode="side" opened="true"class="sidenav">
-      <button (click)="showSideMenue = !showSideMenue" mat-raised-button>
+<mat-toolbar>
+  <span>SingIT</span>
+  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" matTooltip="Testen">
+    <mat-icon>pan_tool</mat-icon>
+  </button>
+  <ng-container *ngIf="!isSmallScreen; else mobileMenu">
+    <button mat-button aria-label="Impressum" (click)="showsImpressum()">
+      Impressum
+    </button>
+    <button mat-button aria-label="AboutUs" (click)="showsAboutPage()">
+      About us
+    </button>
+  </ng-container>
+  <ng-template #mobileMenu>
+    <span class="spacer"></span>
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item aria-label="Impressum" (click)="showsImpressum()">
         Impressum
       </button>
-      <button (click)="showSideMenue = !showSideMenue" mat-raised-button>
-        Übersetzung
+      <button mat-menu-item aria-label="AboutUs" (click)="showsAboutPage()">
+        About us
       </button>
-    </mat-sidenav>
-    <mat-sidenav-content>
-      <button mat-icon-button (click)="toggleSideMenue()">
-        <mat-icon>menu</mat-icon>
-      </button>
-  
+    </mat-menu>
+  </ng-template>
+</mat-toolbar>
 
-    </mat-sidenav-content>
-  </mat-sidenav-container>
-  <div>
+<div>
     <h1>Hauptinhalt</h1>
     <p>Hier kommt der Hauptinhalt deiner Anwendung.</p>
   </div>
+  <div *ngIf="this.showImpressum == true">
+    <app-impressum></app-impressum>
+</div>
+<div *ngIf="this.showAboutPage == true">
+  <app-about-us></app-about-us>
+</div>
   
