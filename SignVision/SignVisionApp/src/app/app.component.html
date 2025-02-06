@@ -7,6 +7,9 @@
     <button mat-button aria-label="Impressum" (click)="showsImpressum()">
       Impressum
     </button>
+    <button mat-button aria-label="AboutUs" (click)="showsAboutPage()">
+      About us
+    </button>
   </ng-container>
   <ng-template #mobileMenu>
     <span class="spacer"></span>
@@ -16,6 +19,9 @@
     <mat-menu #menu="matMenu">
       <button mat-menu-item aria-label="Impressum" (click)="showsImpressum()">
         Impressum
+      </button>
+      <button mat-menu-item aria-label="AboutUs" (click)="showsAboutPage()">
+        About us
       </button>
     </mat-menu>
   </ng-template>
@@ -27,5 +33,8 @@
   </div>
   <div *ngIf="this.showImpressum == true">
     <app-impressum></app-impressum>
+</div>
+<div *ngIf="this.showAboutPage == true">
+  <app-about-us></app-about-us>
 </div>
   

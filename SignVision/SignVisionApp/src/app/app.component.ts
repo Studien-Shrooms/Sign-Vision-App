@@ -12,6 +12,7 @@ export class AppComponent {
   title = 'SignVisionApp';
   showSideMenue = false; 
   showImpressum = false;
+  showAboutPage = false;
   opensidenav = false;
   translationview = false; 
   showApp = true;
@@ -22,8 +23,17 @@ export class AppComponent {
       this.isSmallScreen = result.matches;
     });
   }
-
+  hidePages() {
+    this.showImpressum = false;
+    this.showAboutPage = false;
+  }
   showsImpressum() {
+    this.hidePages()
     this.showImpressum = true;
   }
+  showsAboutPage(){
+    this.hidePages()
+    this.showAboutPage = true;
+  }
+
 }
