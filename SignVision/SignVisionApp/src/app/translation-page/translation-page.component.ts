@@ -1,14 +1,20 @@
 import { Component } from '@angular/core';
 import { TranslationService } from '../translation.service';
-
+import { ChangeDetectorRef } from '@angular/core';
 @Component({
   selector: 'app-translation-page',
   templateUrl: './translation-page.component.html',
   styleUrl: './translation-page.component.css'
 })
 export class TranslationPageComponent {
-  constructor(private translationService: TranslationService) {}
-  selectedLanguage: string = 'de';
+  selectedLanguage :string = '';
+  constructor(private translationService: TranslationService,private cdRef: ChangeDetectorRef) {
+    this.translationService.currentLanguage.subscribe(language => {
+      this.selectedLanguage = language;
+      console.log('Aktuelle Sprache:', this.selectedLanguage);
+    });
+  }
+  
 
   fileUrl: string | ArrayBuffer | null = null;  
   fileType: string = ''; 
@@ -33,8 +39,12 @@ export class TranslationPageComponent {
     }
   }
 
-  setLanguage() {
-    console.log('Ausgewählte Sprache:', this.selectedLanguage);
-    this.translationService.setLanguage(this.selectedLanguage);
+ async setLanguage() {
+    await this.translationService.setLanguage(this.selectedLanguage);
+    await this.translationService.loadTranslations();
+  }
+  ngOnInit(): void {
+    // Lade Übersetzungen
+    this.translationService.loadTranslations();
   }
 }

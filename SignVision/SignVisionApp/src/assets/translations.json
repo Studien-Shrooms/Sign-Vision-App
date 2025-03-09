@@ -1,11 +1,21 @@
 {
     "de": {
       "title": "Willkommen auf unserer Plattform!",
-      "intro": "Wir bieten eine KI-gestützte Übersetzungsplattform."
+      "intro": "Wir bieten eine KI-gestützte Übersetzungsplattform.",
+      "instructionsAndNotes":"Anleitung und Nutzungshinweise",
+      "welcome": "Willkommen",
+      "disclaimer-intro": "Wir freuen uns sehr, dass Sie sich für einen Versuch mit unserer Plattform entschieden haben! Das Übersetzungstool, das Sie hier vorfinden, ist das Ergebnis einer intensiven Forschungsarbeit und basiert auf einer künstlichen Intelligenz (KI), die speziell für diesen Zweck von uns entwickelt und trainiert wurde.",
+      "disclaimer-warning": "Wir sind stets bemüht, Fehler zu minimieren und die Qualität auf höchstem Niveau zu halten. Eine absolute Fehlerfreiheit können wir jedoch, gerade aufgrund der Verwendung von KI,  nicht garantieren. Daher empfehlen wir Ihnen, besonders wichtige oder sensible Informationen zusätzlich zu überprüfen. So können Sie sicher sein, dass alles korrekt übersetzt wurde.",
+      "disclaimer-instruction": "Bei unserem Tool können Sie entscheiden, ob sie von der Deutschen Gebärdensprache in Deutsch oder von American Sign Language in Amerikanisches Englisch übersetzen möchten. Die entsprechende Sprache können sie über die Flaggen am oberen rechten Bildrand wählen. Um den Vorgang zu starten können sie über das Eingabefeld Videos hochladen, welche anschließend übersetzt und das Ergebnis als Text zurückgegeben wird."
     },
     "aen": {
       "title": "Welcome to our platform!",
-      "intro": "We provide an AI-powered translation platform."
+      "intro": "We provide an AI-powered translation platform.",
+      "instructionsAndNotes":"Instruction and usage notes",
+      "welcome": "Welcome",
+      "disclaimer-intro": "We are delighted that you have decided to give our platform a try! The translation tool you will find here is the result of intensive research and is based on artificial intelligence (AI) that we have developed and trained specifically for this purpose.  ",
+      "disclaimer-warning": "We always strive to minimize errors and keep quality at the highest level. However, due to the use of AI, we cannot guarantee absolute freedom from errors. We therefore recommend that you additionally check particularly important or sensitive information. This way, you can be sure that everything has been translated correctly.",
+      "disclaimer-instruction": "With our tool, you can decide whether you want to translate from German Sign Language into German or from American Sign Language into American English. You can select the appropriate language using the flags at the top right of the screen. To start the process, you can upload videos via the input field, which will then be translated and the result returned as text."
     }
   }
   
