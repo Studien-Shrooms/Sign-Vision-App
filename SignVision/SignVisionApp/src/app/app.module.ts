@@ -11,13 +11,15 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { LayoutModule } from '@angular/cdk/layout';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { TranslationPageComponent } from './translation-page/translation-page.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ImpressumComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    TranslationPageComponent
   ],
   imports: [
     BrowserModule,
