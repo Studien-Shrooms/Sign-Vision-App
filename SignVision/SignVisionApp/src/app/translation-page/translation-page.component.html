@@ -1,7 +1,35 @@
 <div class = "languageSelection">
-    <mat-button-toggle-group name="languageSelection" aria-label="LanguageSelection" [hideSingleSelectionIndicator]="true">
+    <mat-button-toggle-group name="languageSelection" aria-label="LanguageSelection" [(ngModel)]="selectedLanguage" [hideSingleSelectionIndicator]="true" (valueChange)="setLanguage()">
     <mat-button-toggle value="de"><mat-icon svgIcon="germany_flag" alt="DE"></mat-icon></mat-button-toggle>
     <mat-button-toggle value="aen"><mat-icon svgIcon="usa_flag" alt="AEN"></mat-icon></mat-button-toggle>
   </mat-button-toggle-group>
+</div>
+<div class="disclaimer">
+    <mat-card class="disclaimer-card">
+        <mat-card-header>
+          <mat-card-title>
+            <h6>Anleitung und Nutzungshinweise</h6> 
+          </mat-card-title>
+        </mat-card-header>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            Willkommen 
+          </mat-expansion-panel-header>
+          <p>
+            Wir freuen uns sehr, dass Sie sich für einen Versuch mit unserer Plattform entschieden haben! Das Übersetzungstool, das Sie hier vorfinden, ist das Ergebnis einer intensiven Forschungsarbeit und basiert auf einer künstlichen Intelligenz (KI), die speziell für diesen Zweck von uns entwickelt und trainiert wurde.
+            <br> <br>
+            Wir sind stets bemüht, Fehler zu minimieren und die Qualität auf höchstem Niveau zu halten. Eine absolute Fehlerfreiheit können wir jedoch, gerade aufgrund der Verwendung von KI,  nicht garantieren. Daher empfehlen wir Ihnen, besonders wichtige oder sensible Informationen zusätzlich zu überprüfen. So können Sie sicher sein, dass alles korrekt übersetzt wurde.
+            <br> <br>
+            Bei unserem Tool können Sie entscheiden, ob sie von der Deutschen Gebärdensprache in Deutsch oder von American Sign Language in Amerikanisches Englisch übersetzen möchten. Die entsprechende Sprache können sie über die Flaggen am oberen rechten Bildrand wählen. Um den Vorgang zu starten können sie über das Eingabefeld Videos hochladen, welche anschließend übersetzt und das Ergebnis als Text zurückgegeben wird.
+          </p>
+        </mat-expansion-panel>
+      </mat-card>
+</div>
+<div class="translation">
+    <div class="preview">
+        <img *ngIf="fileType === 'image'" [src]="fileUrl" alt="Preview" style="max-width: 100%; max-height: 300px;">
+        <video *ngIf="fileType === 'video'" [src]="fileUrl" controls  style="max-width: 100%; max-height: 300px;"></video>
+    </div>
+    <input type="file" class="file-upload" accept="image/*, video/*" onchange="console.log(event.target.files)">
 </div>
 <p>translation-page works!</p>

@@ -3,3 +3,16 @@
     display:flex;
     margin: 20px 30px 0 0;
 }
+.translation {
+    margin: 0 0 0 30px;
+}
+.disclaimer{
+    margin: 10px 20px 10px 20px;
+    justify-content: center;
+    display:flex;
+}
+.disclaimer-card{
+    border:none;
+    max-width:85%;
+    background-color: peachpuff;
+}

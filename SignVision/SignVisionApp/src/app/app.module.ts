@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Pipe, PipeTransform } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { AppRoutingModule } from './app-routing.module';
@@ -13,14 +13,20 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { TranslationPageComponent } from './translation-page/translation-page.component';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { MatExpansionModule } from '@angular/material/expansion';
+import {MatCardModule} from '@angular/material/card';
+import { FormsModule } from '@angular/forms';
+import { TranslatePipe } from './translate.pipe';
+;
 
 @NgModule({
   declarations: [
     AppComponent,
     ImpressumComponent,
     AboutUsComponent,
-    TranslationPageComponent
+    TranslationPageComponent,
+    TranslatePipe
   ],
   imports: [
     BrowserModule,
@@ -32,7 +38,10 @@ import { HttpClientModule } from '@angular/common/http'
     MatMenuModule,
     LayoutModule,
     MatButtonToggleModule,
-    HttpClientModule
+    HttpClientModule,
+    MatExpansionModule,
+    MatCardModule,
+    FormsModule
   ],
   providers: [
     provideClientHydration(),

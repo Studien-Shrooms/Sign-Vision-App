@@ -42,6 +42,8 @@
 <div *ngIf="this.showHome == true">
     <h1>Hauptinhalt</h1>
     <p>Hier kommt der Hauptinhalt deiner Anwendung.</p>
+    <h3>{{ 'title' | translate }}</h3>
+    <p>{{ 'intro' | translate }}</p>
   </div>
   <div *ngIf="this.showImpressum == true">
     <app-impressum></app-impressum>
