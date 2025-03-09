@@ -1,3 +1,11 @@
 .spacer{
   flex: 1;
 }
+.mat-toolbar{
+  background-color: peachpuff;
+  font-size: 1.5rem;
+}
+.mat-toolbar button{
+  font-size: 1.2rem;
+  margin: 0 2% 0 0;
+}

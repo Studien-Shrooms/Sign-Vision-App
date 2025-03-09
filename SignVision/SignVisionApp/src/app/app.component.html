@@ -1,8 +1,12 @@
 <mat-toolbar>
-  <span>SingIT</span>
+  <span>Sing Vision App</span>
   <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" matTooltip="Testen">
     <mat-icon>pan_tool</mat-icon>
   </button>
+  <mat-button-toggle-group name="language" aria-label="Langugae" [hideSingleSelectionIndicator]="true">
+  <mat-button-toggle value="de">German</mat-button-toggle>
+  <mat-button-toggle value="us">American English</mat-button-toggle>
+</mat-button-toggle-group>
   <ng-container *ngIf="!isSmallScreen; else mobileMenu">
     <button mat-button aria-label="Home" (click)="showsHomePage()">
       Home
