@@ -13,6 +13,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { TranslationPageComponent } from './translation-page/translation-page.component';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
     MatToolbarModule,
     MatMenuModule,
     LayoutModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    HttpClientModule
   ],
   providers: [
     provideClientHydration(),
