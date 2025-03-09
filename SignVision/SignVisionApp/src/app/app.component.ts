@@ -9,14 +9,14 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
   standalone:false
 })
 export class AppComponent {
-  title = 'SignVisionApp';
-  showSideMenue = false; 
+  title = 'Sign Vision App';
   showImpressum = false;
   showAboutPage = false;
   opensidenav = false;
-  translationview = false; 
-  showApp = true;
+  translationPage = false; 
+  translationview = false;
   isSmallScreen = false;
+  showHome = true;
 
   constructor(private breakpointObserver: BreakpointObserver) {
     this.breakpointObserver.observe([Breakpoints.Handset]).subscribe(result => {
@@ -26,14 +26,23 @@ export class AppComponent {
   hidePages() {
     this.showImpressum = false;
     this.showAboutPage = false;
+    this.translationPage = false;
+    this.showHome = false;
   }
   showsImpressum() {
     this.hidePages()
     this.showImpressum = true;
   }
+  showsTranslation() {
+    this.hidePages()
+    this.translationPage = true;
+  }
   showsAboutPage(){
     this.hidePages()
     this.showAboutPage = true;
   }
-
+  showsHomePage(){
+    this.hidePages()
+    this.showHome = true;
+  }
 }

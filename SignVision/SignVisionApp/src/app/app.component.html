@@ -4,6 +4,12 @@
     <mat-icon>pan_tool</mat-icon>
   </button>
   <ng-container *ngIf="!isSmallScreen; else mobileMenu">
+    <button mat-button aria-label="Home" (click)="showsHomePage()">
+      Home
+    </button>
+    <button mat-button aria-label="Translate" (click)="showsTranslation()">
+      Translate
+    </button>
     <button mat-button aria-label="Impressum" (click)="showsImpressum()">
       Impressum
     </button>
@@ -17,6 +23,12 @@
       <mat-icon>menu</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
+      <button mat-menu-item aria-label="Home" (click)="showsHomePage()">
+        Home
+      </button>
+      <button mat-menu-item aria-label="Translate" (click)="showsTranslation()">
+        Translate
+      </button>
       <button mat-menu-item aria-label="Impressum" (click)="showsImpressum()">
         Impressum
       </button>
@@ -27,7 +39,7 @@
   </ng-template>
 </mat-toolbar>
 
-<div>
+<div *ngIf="this.showHome == true">
     <h1>Hauptinhalt</h1>
     <p>Hier kommt der Hauptinhalt deiner Anwendung.</p>
   </div>
@@ -36,5 +48,8 @@
 </div>
 <div *ngIf="this.showAboutPage == true">
   <app-about-us></app-about-us>
+</div>
+<div *ngIf="this.translationPage == true">
+  <app-translation-page></app-translation-page>
 </div>
   
