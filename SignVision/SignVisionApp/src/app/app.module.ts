@@ -12,7 +12,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { LayoutModule } from '@angular/cdk/layout';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { TranslationPageComponent } from './translation-page/translation-page.component';
-
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
 @NgModule({
   declarations: [
@@ -29,7 +29,8 @@ import { TranslationPageComponent } from './translation-page/translation-page.co
     MatButtonModule,
     MatToolbarModule,
     MatMenuModule,
-    LayoutModule
+    LayoutModule,
+    MatButtonToggleModule
   ],
   providers: [
     provideClientHydration(),
