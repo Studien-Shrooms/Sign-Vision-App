@@ -8,13 +8,13 @@
       Home
     </button>
     <button mat-button aria-label="Translate" (click)="showsTranslation()">
-      Translate
+      {{'translate' | translate}}
     </button>
     <button mat-button aria-label="Impressum" (click)="showsImpressum()">
       Impressum
     </button>
     <button mat-button aria-label="AboutUs" (click)="showsAboutPage()">
-      About us
+      {{'aboutUs' | translate}}
     </button>
   </ng-container>
   <ng-template #mobileMenu>
@@ -27,13 +27,13 @@
         Home
       </button>
       <button mat-menu-item aria-label="Translate" (click)="showsTranslation()">
-        Translate
+        {{'translate' | translate}}
       </button>
       <button mat-menu-item aria-label="Impressum" (click)="showsImpressum()">
         Impressum
       </button>
       <button mat-menu-item aria-label="AboutUs" (click)="showsAboutPage()">
-        About us
+        {{'aboutUs' | translate}}
       </button>
     </mat-menu>
   </ng-template>

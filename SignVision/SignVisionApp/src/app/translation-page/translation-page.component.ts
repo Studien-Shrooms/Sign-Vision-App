@@ -7,6 +7,7 @@ import { ChangeDetectorRef } from '@angular/core';
   styleUrl: './translation-page.component.css'
 })
 export class TranslationPageComponent {
+
   selectedLanguage :string = '';
   constructor(public translationService: TranslationService,private cdRef: ChangeDetectorRef) {
     this.translationService.currentLanguage.subscribe(language => {
@@ -14,36 +15,59 @@ export class TranslationPageComponent {
       console.log('Aktuelle Sprache:', this.selectedLanguage);
     });
   }
-  
-
+  selectedFile: File | null = null;
+  showTranslation :boolean = false;
   fileUrl: string | ArrayBuffer | null = null;  
   fileType: string = ''; 
 
   onFileChange(event: any) {
-    const file = event.target.files[0];  
-
-    if (file) {
-      const reader = new FileReader();
-      
-      if (file.type.startsWith('image')) {
-        this.fileType = 'image'; 
-      } else if (file.type.startsWith('video')) {
-        this.fileType = 'video'; 
-      }
-
-      reader.onload = () => {
-        this.fileUrl = reader.result;  
-      };
-      
-      reader.readAsDataURL(file);  
+    this.showTranslation =false;
+    if (!event.target.files || event.target.files.length === 0) {
+      this.selectedFile = null;
+      return;
     }
+  
+    const file = event.target.files[0];
+    this.selectedFile = file; 
+  
+    const reader = new FileReader();
+  
+    if (file.type.startsWith('image')) {
+      this.fileType = 'image'; 
+    } else if (file.type.startsWith('video')) {
+      this.fileType = 'video'; 
+    } else {
+      console.warn('Ungültiger Dateityp:', file.type);
+      this.fileType = '';
+      this.fileUrl = null;
+      this.selectedFile = null;
+      return;
+    }
+  
+    reader.onload = () => {
+      this.fileUrl = reader.result;  
+      console.log('Datei geladen:', this.fileUrl);
+    };
+  
+    reader.readAsDataURL(file);
   }
+  
 
  async setLanguage() {
     await this.translationService.setLanguage(this.selectedLanguage);
   }
+  startTranslations() {
+    if (this.selectedFile) {
+      console.log('Ausgewählte Datei:', this.selectedFile);
+      console.log("Translation start");
+      this.showTranslation = true 
+    } else {
+      console.log('Keine Datei ausgewählt');
+    }
+
+  }
+
   ngOnInit(): void {
-    // Lade Übersetzungen
     this.translationService.loadTranslations();
   }
 }

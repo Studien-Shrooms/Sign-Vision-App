@@ -24,9 +24,13 @@
       </mat-card>
 </div>
 <div class="translation">
-    <div class="preview">
+    <!--<div class="preview">
         <img *ngIf="fileType === 'image'" [src]="fileUrl" alt="Preview" style="max-width: 100%; max-height: 300px;">
         <video *ngIf="fileType === 'video'" [src]="fileUrl" controls  style="max-width: 100%; max-height: 300px;"></video>
-    </div>
-    <input type="file" class="file-upload" accept="image/*, video/*" onchange="console.log(event.target.files)">
+    </div>-->
+    <mat-card appearance="outlined" class="translation-card">
+       <mat-card-content><input type="file" class="file-upload" accept="image/*, video/*" (change)="onFileChange($event)"></mat-card-content> 
+       <mat-card-actions class="translation-action"><button (click)="startTranslations()">{{'translate' | translate}}</button></mat-card-actions>
+       <mat-card-content *ngIf="showTranslation"><p>Hier kommt die Übersetzung hin </p></mat-card-content> 
+    </mat-card>
 </div>
