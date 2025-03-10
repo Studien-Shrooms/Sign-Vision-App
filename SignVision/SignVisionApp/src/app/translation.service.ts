@@ -6,24 +6,28 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class TranslationService {
-  public selectedLanguage: string = 'de'; // Standardwert
+  public selectedLanguage: string = 'de'; 
   private translations: any = {};
   private languageSubject = new BehaviorSubject<string>(this.selectedLanguage);
 
   constructor(private http: HttpClient) {}
 
-  // Methode zum Laden der Übersetzungen aus einer JSON-Datei
-  loadTranslations(): void {
-    this.http.get('assets/translations.json').subscribe((translations) => {
-      this.translations = translations;
-      this.languageSubject.next(this.selectedLanguage); // Setze die Sprache nach dem Laden der Übersetzungen
+  loadTranslations(): Promise<void> {
+    return new Promise((resolve) => {
+      this.http.get('assets/translations.json').subscribe((translations) => {
+        this.translations = translations;
+        this.languageSubject.next(this.selectedLanguage);
+        resolve(); 
+      });
     });
   }
+  
 
-  // Methode zum Setzen der Sprache
-  setLanguage(language: string): void {
+
+  async setLanguage(language: string): Promise<void> {
     this.selectedLanguage = language;
-    this.languageSubject.next(language); // Informiere alle Abonnenten über die Änderung
+    this.languageSubject.next(language);
+    await this.loadTranslations(); // Informiere alle Abonnenten über die Änderung
   }
 
   // Methode, um den Text basierend auf der aktuellen Sprache zu holen

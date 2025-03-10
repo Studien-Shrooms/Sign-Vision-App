@@ -8,7 +8,7 @@ import { ChangeDetectorRef } from '@angular/core';
 })
 export class TranslationPageComponent {
   selectedLanguage :string = '';
-  constructor(private translationService: TranslationService,private cdRef: ChangeDetectorRef) {
+  constructor(public translationService: TranslationService,private cdRef: ChangeDetectorRef) {
     this.translationService.currentLanguage.subscribe(language => {
       this.selectedLanguage = language;
       console.log('Aktuelle Sprache:', this.selectedLanguage);
@@ -41,7 +41,6 @@ export class TranslationPageComponent {
 
  async setLanguage() {
     await this.translationService.setLanguage(this.selectedLanguage);
-    await this.translationService.loadTranslations();
   }
   ngOnInit(): void {
     // Lade Übersetzungen

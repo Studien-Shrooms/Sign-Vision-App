@@ -2,7 +2,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { TranslationService } from './translation.service';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 @Pipe({
-  name: 'translate'
+  name: 'translate',
+  pure: false,
 })
 export class TranslatePipe implements PipeTransform {
 
