@@ -1,1 +1,37 @@
-<p>translation-page works!</p>
+<div class = "languageSelection">
+    <mat-button-toggle-group name="languageSelection" aria-label="LanguageSelection" [(ngModel)]="selectedLanguage" [hideSingleSelectionIndicator]="true" (valueChange)="setLanguage()">
+    <mat-button-toggle value="de"><mat-icon svgIcon="germany_flag" alt="DE"></mat-icon></mat-button-toggle>
+    <mat-button-toggle value="aen"><mat-icon svgIcon="usa_flag" alt="AEN"></mat-icon></mat-button-toggle>
+  </mat-button-toggle-group>
+</div>
+<div class="disclaimer">
+    <mat-card class="disclaimer-card">
+        <mat-card-header>
+          <mat-card-title>
+            <h6>{{ 'instructionsAndNotes' | translate }}</h6> 
+          </mat-card-title>
+        </mat-card-header>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            {{ 'welcome' | translate }}
+          </mat-expansion-panel-header>
+          <p>
+            {{ 'disclaimer-intro' | translate }} <br><br>
+            {{ 'disclaimer-warning' | translate }} <br><br>
+            {{ 'disclaimer-instruction' | translate }} 
+          </p>
+        </mat-expansion-panel>
+      </mat-card>
+</div>
+<div class="translation">
+    <!--<div class="preview">
+        <img *ngIf="fileType === 'image'" [src]="fileUrl" alt="Preview" style="max-width: 100%; max-height: 300px;">
+        <video *ngIf="fileType === 'video'" [src]="fileUrl" controls  style="max-width: 100%; max-height: 300px;"></video>
+    </div>-->
+    <mat-card appearance="outlined" class="translation-card">
+       <mat-card-content><input type="file" class="file-upload" accept="image/*, video/*" (change)="onFileChange($event)"></mat-card-content> 
+       <mat-card-actions class="translation-action"><button (click)="startTranslations()">{{'translate' | translate}}</button></mat-card-actions>
+       <mat-spinner *ngIf="startTranslation" class="translation-spinner"></mat-spinner>
+       <mat-card-content *ngIf="showTranslation"><p>Hier kommt die Übersetzung hin </p></mat-card-content> 
+    </mat-card>
+</div>

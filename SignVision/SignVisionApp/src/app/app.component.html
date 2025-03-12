@@ -1,20 +1,20 @@
 <mat-toolbar>
-  <span>Sing Vision App</span>
+  <span>Sign Vision App</span>
   <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" matTooltip="Testen">
     <mat-icon>pan_tool</mat-icon>
   </button>
   <ng-container *ngIf="!isSmallScreen; else mobileMenu">
     <button mat-button aria-label="Home" (click)="showsHomePage()">
-      Home
+      {{'home' | translate}}
     </button>
     <button mat-button aria-label="Translate" (click)="showsTranslation()">
-      Translate
+      {{'translate' | translate}}
     </button>
     <button mat-button aria-label="Impressum" (click)="showsImpressum()">
       Impressum
     </button>
     <button mat-button aria-label="AboutUs" (click)="showsAboutPage()">
-      About us
+      {{'aboutUs' | translate}}
     </button>
   </ng-container>
   <ng-template #mobileMenu>
@@ -27,21 +27,21 @@
         Home
       </button>
       <button mat-menu-item aria-label="Translate" (click)="showsTranslation()">
-        Translate
+        {{'translate' | translate}}
       </button>
       <button mat-menu-item aria-label="Impressum" (click)="showsImpressum()">
         Impressum
       </button>
       <button mat-menu-item aria-label="AboutUs" (click)="showsAboutPage()">
-        About us
+        {{'aboutUs' | translate}}
       </button>
     </mat-menu>
   </ng-template>
 </mat-toolbar>
 
 <div *ngIf="this.showHome == true">
-    <h1>Hauptinhalt</h1>
-    <p>Hier kommt der Hauptinhalt deiner Anwendung.</p>
+    <h3>{{ 'title' | translate }}</h3>
+    <p>{{ 'intro' | translate }}</p>
   </div>
   <div *ngIf="this.showImpressum == true">
     <app-impressum></app-impressum>
