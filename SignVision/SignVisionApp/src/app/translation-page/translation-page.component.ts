@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { TranslationService } from '../translation.service';
 import { ChangeDetectorRef } from '@angular/core';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-translation-page',
   templateUrl: './translation-page.component.html',
@@ -10,7 +11,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 export class TranslationPageComponent {
 
   selectedLanguage :string = '';
-  constructor(public translationService: TranslationService,private cdRef: ChangeDetectorRef) {
+  constructor(public translationService: TranslationService,private cdRef: ChangeDetectorRef, private snackBar: MatSnackBar) {
     this.translationService.currentLanguage.subscribe(language => {
       this.selectedLanguage = language;
       console.log('Aktuelle Sprache:', this.selectedLanguage);
@@ -19,6 +20,7 @@ export class TranslationPageComponent {
   selectedFile: File | null = null;
   startTranslation: boolean = false; 
   showTranslation :boolean = false;
+  warningMsg :string = '';
   fileUrl: string | ArrayBuffer | null = null;  
   fileType: string = ''; 
 
@@ -40,6 +42,7 @@ export class TranslationPageComponent {
       this.fileType = 'video'; 
     } else {
       console.warn('Ungültiger Dateityp:', file.type);
+      this.showWarning('ungültiger Datentyp')
       this.fileType = '';
       this.fileUrl = null;
       this.selectedFile = null;
@@ -70,6 +73,7 @@ export class TranslationPageComponent {
       this.startTranslation = false;
       this.showTranslation = true 
     } else {
+      this.showWarning('Keine Datei ausgewählt')
       console.log('Keine Datei ausgewählt');
     }
 
@@ -77,4 +81,12 @@ export class TranslationPageComponent {
   ngOnInit(): void {
     this.translationService.loadTranslations();
   }
+  showWarning(warningMsg:string) {
+    this.snackBar.open(warningMsg, 'OK', {
+    duration: 3000,
+    panelClass: ['warning-snackbar']
+  } );
+  }
 }
+
+
