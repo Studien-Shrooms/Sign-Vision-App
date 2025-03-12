@@ -18,7 +18,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import {MatCardModule} from '@angular/material/card';
 import { FormsModule } from '@angular/forms';
 import { TranslatePipe } from './translate.pipe';
-;
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { TranslatePipe } from './translate.pipe';
     HttpClientModule,
     MatExpansionModule,
     MatCardModule,
-    FormsModule
+    FormsModule,
+    MatProgressSpinnerModule
   ],
   providers: [
     provideClientHydration(),

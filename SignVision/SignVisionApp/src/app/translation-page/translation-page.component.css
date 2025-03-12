@@ -33,3 +33,8 @@
     max-width:85%;
     background-color: peachpuff;
 }
+.translation .translation-spinner{
+    justify-content: center !important;
+    max-height:30px;
+    align-items: center;
+}
