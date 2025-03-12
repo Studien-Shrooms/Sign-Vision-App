@@ -42,7 +42,7 @@ export class TranslationPageComponent {
       this.fileType = 'video'; 
     } else {
       console.warn('Ungültiger Dateityp:', file.type);
-      this.showWarning('ungültiger Datentyp')
+      this.showWarning('Ungültiger Datentyp / Invalid data type')
       this.fileType = '';
       this.fileUrl = null;
       this.selectedFile = null;
@@ -73,7 +73,7 @@ export class TranslationPageComponent {
       this.startTranslation = false;
       this.showTranslation = true 
     } else {
-      this.showWarning('Keine Datei ausgewählt')
+      this.showWarning('Keine Datei ausgewählt / No File Selected')
       console.log('Keine Datei ausgewählt');
     }
 
