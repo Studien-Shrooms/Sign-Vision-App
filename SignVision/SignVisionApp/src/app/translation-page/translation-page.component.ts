@@ -14,7 +14,6 @@ export class TranslationPageComponent {
   constructor(public translationService: TranslationService,private cdRef: ChangeDetectorRef, private snackBar: MatSnackBar) {
     this.translationService.currentLanguage.subscribe(language => {
       this.selectedLanguage = language;
-      console.log('Aktuelle Sprache:', this.selectedLanguage);
     });
   }
   selectedFile: File | null = null;
