@@ -39,4 +39,11 @@ export class TranslationService {
   get currentLanguage() {
     return this.languageSubject.asObservable();
   }
+  uploadVideo(file: File, language: string) {
+    const formData = new FormData();
+    formData.append('file', file);
+    formData.append('language', language);
+  
+    return this.http.post<any>('http://localhost:8000/upload', formData);
+  }
 }

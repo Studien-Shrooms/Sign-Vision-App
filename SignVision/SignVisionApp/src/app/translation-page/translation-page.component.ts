@@ -23,6 +23,7 @@ export class TranslationPageComponent {
   warningMsg :string = '';
   fileUrl: string | ArrayBuffer | null = null;  
   fileType: string = ''; 
+  uploadResponse: any = null;
 
   onFileChange(event: any) {
     this.showTranslation =false;
@@ -64,19 +65,31 @@ export class TranslationPageComponent {
   async delay(ms: number) { // kann später gelöscht werden ist grade nur zum veranschaulichen
     return new Promise( resolve => setTimeout(resolve, ms) );
 }
-  async startTranslations() {
-    if (this.selectedFile) {
-      console.log('Ausgewählte Datei:', this.selectedFile);
-      console.log("Translation start");
-      this.startTranslation = true;
-      await this.delay(2000) // später durch Warten auf Übersetzung ersetzen
-      this.startTranslation = false;
-      this.showTranslation = true 
-    } else {
-      this.showWarning('Keine Datei ausgewählt / No File Selected')
-      console.log('Keine Datei ausgewählt');
+async startTranslations() {
+  if (this.selectedFile) {
+    console.log('Ausgewählte Datei:', this.selectedFile);
+    console.log("Translation start");
+    this.startTranslation = true;
+    this.uploadResponse = null;
+
+    try {
+      const response = await this.translationService
+        .uploadVideo(this.selectedFile, this.selectedLanguage)
+        .toPromise();
+
+      console.log('Antwort vom Server:', response);
+      this.uploadResponse = response;
+      this.showTranslation = true;
+    } catch (error) {
+      console.error('Fehler beim Upload:', error);
+      this.showWarning('Upload fehlgeschlagen / Upload failed');
     }
 
+    this.startTranslation = false;
+  } else {
+    this.showWarning('Keine Datei ausgewählt / No File Selected');
+    console.log('Keine Datei ausgewählt');
+  }
   }
   ngOnInit(): void {
     this.translationService.loadTranslations();

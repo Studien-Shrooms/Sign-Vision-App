@@ -32,6 +32,8 @@
        <mat-card-content><input type="file" class="file-upload" accept="image/*, video/*" (change)="onFileChange($event)"></mat-card-content> 
        <mat-card-actions class="translation-action"><button (click)="startTranslations()">{{'translate' | translate}}</button></mat-card-actions>
        <mat-spinner *ngIf="startTranslation" class="translation-spinner"></mat-spinner>
-       <mat-card-content *ngIf="showTranslation"><p>Hier kommt die Übersetzung hin </p></mat-card-content> 
+       <mat-card-content *ngIf="showTranslation && uploadResponse"><p><strong>{{ uploadResponse.filename }}</strong> wurde erfolgreich hochgeladen. <br>
+        Sprache: <strong>{{ uploadResponse.language | uppercase }}</strong><br>
+        Nachricht: {{ uploadResponse.message }} </p></mat-card-content> 
     </mat-card>
 </div>
