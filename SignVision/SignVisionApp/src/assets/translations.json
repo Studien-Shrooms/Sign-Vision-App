@@ -1,7 +1,7 @@
 {
     "de": {
       "title": "Willkommen auf unserer Plattform!",
-      "intro": "Wir bieten eine KI-gestützte Übersetzungsplattform.",
+      "intro": "Diese Webseite soll Ihnen den einfachen Zugang zu unserem Tool ermöglichen, das einfache Gebärden (ASL und DGS) in Text übersetzt. \n Sie können die Sprache der Übersetzung ganz einfach ändern, indem Sie auf die entsprechende Flagge unter dem Reiter Übersetzen klicken. Durch Klicken auf die entsprechende Flagge wird auch die Gesamtsprache der Anwendung automatisch angepasst.\n \n Diese Anwendung ist im Rahmen einer Studienarbeit entstanden und kann daher Fehler enthalten - wir freuen uns jederzeit über Ihr Feedback! ",
       "instructionsAndNotes":"Anleitung und Nutzungshinweise",
       "welcome": "Willkommen",
       "disclaimer-intro": "Wir freuen uns sehr, dass Sie sich für einen Versuch mit unserer Plattform entschieden haben! Das Übersetzungstool, das Sie hier vorfinden, ist das Ergebnis einer intensiven Forschungsarbeit und basiert auf einer künstlichen Intelligenz (KI), die speziell für diesen Zweck von uns entwickelt und trainiert wurde.",
@@ -22,7 +22,7 @@
     },
     "aen": {
       "title": "Welcome to our platform!",
-      "intro": "We provide an AI-powered translation platform.",
+      "intro": "This website has been designed to provide users with straightforward access to a translation tool for simple signs (ASL and DGS). \n  The language of the translation can be readily modified by clicking on the relevant flag, which can be found under the Translate tab. It should be noted that the application's overall language is automatically adjusted upon clicking a flag. \n \n The application was developed as part of a student research project and may contain errors - We always welcome your feedback.",
       "instructionsAndNotes":"Instruction and usage notes",
       "welcome": "Welcome",
       "disclaimer-intro": "We are delighted that you have decided to give our platform a try! The translation tool you will find here is the result of intensive research and is based on artificial intelligence (AI) that we have developed and trained specifically for this purpose.  ",

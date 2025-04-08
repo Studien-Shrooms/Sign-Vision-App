@@ -9,3 +9,13 @@
   font-size: 1.2rem;
   margin: 0 2% 0 0;
 }
+.app-info{
+  margin: 2% 5% 5% 5%;
+  padding-bottom: 5px;
+}
+.subtitle {
+  font-size: 0.75rem;
+  color: #777474;
+  margin-top: 2.5%;
+  margin-left: 0.5%;
+}

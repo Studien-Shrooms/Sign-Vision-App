@@ -1,7 +1,7 @@
 <mat-toolbar>
   <span>Sign Vision App</span>
+  <span class="subtitle">Build with llama</span>
   <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" matTooltip="Testen">
-    <mat-icon>pan_tool</mat-icon>
   </button>
   <ng-container *ngIf="!isSmallScreen; else mobileMenu">
     <button mat-button aria-label="Home" (click)="showsHomePage()">
@@ -34,8 +34,10 @@
 </mat-toolbar>
 
 <div *ngIf="this.showHome == true">
+  <div class="app-info">
     <h3>{{ 'title' | translate }}</h3>
-    <p>{{ 'intro' | translate }}</p>
+    <p style="white-space: pre-line">{{ 'intro' | translate }}</p>
+  </div>
   </div>
   <div *ngIf="this.showImpressum == true">
     <app-impressum></app-impressum>
