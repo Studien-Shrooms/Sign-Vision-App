@@ -1,0 +1,3 @@
+[submodule "AppInRepository/Sign-Vision-App"]
+    path = AppInRepository/Sign-Vision-App
+    url = https://github.com/Studien-Shrooms/Sign-Vision-App-Submodule.gi
