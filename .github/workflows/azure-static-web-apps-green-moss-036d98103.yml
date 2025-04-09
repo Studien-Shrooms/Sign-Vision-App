@@ -30,7 +30,7 @@ jobs:
           # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
           app_location: "./SignVision/SignVisionApp"
           output_location: "dist/SignVisionApp/browser"
-          app_build_command: "npm start"
+          app_build_command: "npm run build"
 
 
   close_pull_request_job:
