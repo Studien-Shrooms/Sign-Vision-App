@@ -1,7 +1,7 @@
 <mat-toolbar>
   <span>Sign Vision App</span>
+  <span class="subtitle">Build with llama</span>
   <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" matTooltip="Testen">
-    <mat-icon>pan_tool</mat-icon>
   </button>
   <ng-container *ngIf="!isSmallScreen; else mobileMenu">
     <button mat-button aria-label="Home" (click)="showsHomePage()">
@@ -13,9 +13,6 @@
     <button mat-button aria-label="Impressum" (click)="showsImpressum()">
       Impressum
     </button>
-    <button mat-button aria-label="AboutUs" (click)="showsAboutPage()">
-      {{'aboutUs' | translate}}
-    </button>
   </ng-container>
   <ng-template #mobileMenu>
     <span class="spacer"></span>
@@ -24,7 +21,7 @@
     </button>
     <mat-menu #menu="matMenu">
       <button mat-menu-item aria-label="Home" (click)="showsHomePage()">
-        Home
+        {{'home' | translate}}
       </button>
       <button mat-menu-item aria-label="Translate" (click)="showsTranslation()">
         {{'translate' | translate}}
@@ -32,16 +29,15 @@
       <button mat-menu-item aria-label="Impressum" (click)="showsImpressum()">
         Impressum
       </button>
-      <button mat-menu-item aria-label="AboutUs" (click)="showsAboutPage()">
-        {{'aboutUs' | translate}}
-      </button>
     </mat-menu>
   </ng-template>
 </mat-toolbar>
 
 <div *ngIf="this.showHome == true">
+  <div class="app-info">
     <h3>{{ 'title' | translate }}</h3>
-    <p>{{ 'intro' | translate }}</p>
+    <p style="white-space: pre-line">{{ 'intro' | translate }}</p>
+  </div>
   </div>
   <div *ngIf="this.showImpressum == true">
     <app-impressum></app-impressum>
