@@ -29,8 +29,8 @@ jobs:
           ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
           # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
           app_location: "./SignVision/SignVisionApp"
-          output_location: "dist/static/browser"
-          app_build_command: "ng build SignVisionApp --configuration production --output-path dist/static"
+          output_location: "dist/SignVisionApp/browser"
+          app_build_command: "npm start"
 
 
   close_pull_request_job:
