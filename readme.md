@@ -18,8 +18,7 @@
 2. [Setup](#setup)
 3. [Usage](#usage)
 4. [Deployment](#deployment)
-5. [Contributing](#contributing)
-6. [License](#license)
+
 
 ## Features
 
