@@ -1,9 +1,6 @@
 <div align="center">
     <h1>Frontend for SignVision Application</h1>
     <img src="https://img.shields.io/github/last-commit/Studien-Shrooms/Sign-Vision-App">
-    <img src="https://img.shields.io/github/actions/workflow/status/Studien-Shrooms/Sign-Vision-App/ci.yml?label=build">
-    <img src="https://img.shields.io/github/v/release/Studien-Shrooms/Sign-Vision-App"> 
-    <img src="https://img.shields.io/github/license/Studien-Shrooms/Sign-Vision-App">
     <img src="https://img.shields.io/github/languages/top/Studien-Shrooms/Sign-Vision-App">
     <img src="https://img.shields.io/github/languages/count/Studien-Shrooms/Sign-Vision-App">
     <img src="https://img.shields.io/github/repo-size/Studien-Shrooms/Sign-Vision-App">
